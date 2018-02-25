@@ -4,4 +4,11 @@
 
 Compile Steps:
 
+	gcc q2.c -o out2
+
 Output:
+
+	'/' indicates the end of the first string
+	Strings 1 and 2: Hi Professor Hong,/ this is a strcat test!
+	Strings 3 and 4: I named it strcatMe because/ strcat is already defined and it gave me a warning.
+	Strings 5 and 6: This is String 5; now we append string 6:/ This is String 6! Ta-da!

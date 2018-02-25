@@ -4,4 +4,11 @@
 
 Compile Steps:
 
+	gcc q4.c -o out4
+
 Output:
+
+	yada yada ta
+	second str
+	copy t str
+	

@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <ctype.h>
 
+//getfloat still returns an int, but it's written to *pn the actual float.
+
 // K&R Pg. 97
 int getch();
 void ungetch(int);
@@ -53,10 +55,12 @@ int getfloat(double *pn)
 	if(c == '.') {
 		c = getch();
 	}
+	//the following for loop gets the characters after the decimal
 	for (holder = 0; isdigit(c); c = getch(),place*=10) {
         holder = 10 * holder + (c - '0');
-		//printf(*pn);
 	}
+	//append the newfound digits by adding it to the previous determined answer
+	//but make sure the sign is right
 	afterDec = adSign*(holder/place);
 	*pn+=afterDec;
 
@@ -70,7 +74,11 @@ int main()
 {
     int c;
 	double pn;
-    c = getfloat(&pn);
-    printf("c=%d pn=%f", c, pn);
-    return 0;
+	for(int i = 0; i < 3; i++) {
+    	c = getfloat(&pn);
+    	printf("c=%d pn=%f\n", c, pn);
+		c = 0;
+		pn = 0;
+	}    
+	return 0;
 }

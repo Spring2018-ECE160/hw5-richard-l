@@ -11,7 +11,7 @@ static char daytab[2][13] = {
 	{0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
 };
 
-/* day_of_year: set day of year from month & day */
+/* day_of_year: set day of year from month & day; ; returns -1 if invalid */
 int day_of_year(int year, int month, int day) {
 	int i, leap;
 	if(year <= 1582 || month <=0 || month > 12 || day <= 0 || day > 31) {
@@ -27,7 +27,7 @@ int day_of_year(int year, int month, int day) {
 	}
 }
 
-/* month_day: set month, day from day of year */
+/* month_day: set month, day from day of year; sets -1 for month and day if invalid */
 void month_day(int year, int yearday, int *pmonth, int *pday)
 {	
 	int i, leap;

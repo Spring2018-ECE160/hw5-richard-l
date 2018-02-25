@@ -4,4 +4,10 @@
 
 Compile Steps:
 
+	gcc q3.c -o out3
+
 Output:
+
+	Output 1 (should be 1): 1
+	Output 2 (should be 0): 0
+	Output 3 (should be 1): 1
